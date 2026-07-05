@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#08090B">
+<title>@cassioluanr · Diagnóstico e Plano de Crescimento</title>
+<meta property="og:title" content="@cassioluanr · Diagnóstico e Plano de Crescimento no Instagram">
+<meta property="og:description" content="Relatório estratégico com dados reais + Playbook de Viralização 2026. Deslize pra ver.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08090B; --bg2:#0E1013; --card:#14171C; --card2:#1A1E25; --line:#262B33;
+  --txt:#F3F4F6; --muted:#9AA0AB; --dim:#6B717C;
+  --lime:#C6FF3D; --lime-d:rgba(198,255,61,.13);
+  --red:#FF5C6B; --red-d:rgba(255,92,107,.13);
+  --violet:#9A8BFF; --violet-d:rgba(154,139,255,.13);
+  --amber:#FFC24B; --amber-d:rgba(255,194,75,.12);
+  --teal:#3DE0C9;
+  --maxw:820px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg); color:var(--txt);
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  -webkit-font-smoothing:antialiased; line-height:1.5;
+  overflow-x:hidden;
+}
+.deck{height:100dvh; overflow-y:scroll; scroll-snap-type:y proximity; scroll-behavior:smooth}
+.deck::-webkit-scrollbar{display:none}
+.deck{scrollbar-width:none}
+section{
+  min-height:100dvh; scroll-snap-align:start;
+  display:flex; flex-direction:column; justify-content:center;
+  padding:64px 22px 96px; position:relative;
+}
+.wrap{width:100%; max-width:var(--maxw); margin:0 auto}
+h1,h2,h3,.kicker,.big{font-family:'Space Grotesk',sans-serif}
+.kicker{
+  font-size:12px; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--lime); font-weight:600; margin-bottom:14px; display:flex; align-items:center; gap:8px;
+}
+.kicker::before{content:""; width:22px; height:2px; background:var(--lime); display:inline-block; border-radius:2px}
+h2{font-size:clamp(26px,6.4vw,44px); line-height:1.08; font-weight:700; letter-spacing:-.02em; margin-bottom:16px}
+.lead{color:var(--muted); font-size:clamp(15px,3.8vw,18px); max-width:640px; margin-bottom:26px}
+.hl{color:var(--lime)} .hlr{color:var(--red)} .hlv{color:var(--violet)} .hla{color:var(--amber)}
+b,strong{color:var(--txt); font-weight:600}
+
+/* reveal */
+.rv{opacity:0; transform:translateY(26px); transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)}
+.in .rv{opacity:1; transform:none}
+.in .rv.d1{transition-delay:.08s}.in .rv.d2{transition-delay:.16s}.in .rv.d3{transition-delay:.24s}
+.in .rv.d4{transition-delay:.32s}.in .rv.d5{transition-delay:.40s}.in .rv.d6{transition-delay:.48s}
+
+/* background glow */
+.glow{position:absolute; inset:0; overflow:hidden; z-index:0; pointer-events:none}
+.glow::before{content:""; position:absolute; width:520px; height:520px; border-radius:50%;
+  background:radial-gradient(circle, rgba(198,255,61,.10), transparent 62%); top:-160px; right:-120px; filter:blur(10px)}
+.glow::after{content:""; position:absolute; width:480px; height:480px; border-radius:50%;
+  background:radial-gradient(circle, rgba(154,139,255,.09), transparent 62%); bottom:-180px; left:-140px; filter:blur(10px)}
+.wrap{position:relative; z-index:1}
+
+/* progress + nav */
+.topbar{position:fixed; top:0; left:0; right:0; height:3px; background:rgba(255,255,255,.06); z-index:50}
+.topbar i{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--lime),var(--teal)); transition:width .15s linear}
+.dots{position:fixed; right:12px; top:50%; transform:translateY(-50%); z-index:50; display:flex; flex-direction:column; gap:9px}
+.dots a{width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,.18); transition:.25s; display:block}
+.dots a.on{background:var(--lime); transform:scale(1.5)}
+@media(max-width:560px){.dots{display:none}}
+.counter{position:fixed; left:16px; bottom:14px; z-index:50; font-family:'Space Grotesk'; font-size:12px; color:var(--dim); letter-spacing:.05em}
+.counter b{color:var(--txt)}
+
+/* cards + grids */
+.grid{display:grid; gap:12px}
+.g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:640px){.g3{grid-template-columns:1fr} .g2{grid-template-columns:1fr}}
+.card{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px}
+.card.win{background:linear-gradient(180deg,var(--lime-d),transparent); border-color:rgba(198,255,61,.28)}
+.card.bad{background:linear-gradient(180deg,var(--red-d),transparent); border-color:rgba(255,92,107,.28)}
+.card.v{background:linear-gradient(180deg,var(--violet-d),transparent); border-color:rgba(154,139,255,.3)}
+.card.a{background:linear-gradient(180deg,var(--amber-d),transparent); border-color:rgba(255,194,75,.3)}
+.card h3{font-size:16px; font-weight:600; margin-bottom:6px; letter-spacing:-.01em}
+.card p{font-size:13.5px; color:var(--muted); line-height:1.55}
+.card .tag{font-size:11px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; margin-bottom:8px; display:inline-block}
+.emoji{font-size:22px; margin-bottom:8px; display:block; -webkit-text-fill-color:initial}
+
+/* stat blocks */
+.stats{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:8px}
+@media(max-width:640px){.stats{grid-template-columns:1fr}}
+.stat{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px 18px}
+.stat .num{font-family:'Space Grotesk'; font-weight:700; font-size:clamp(30px,8vw,44px); line-height:1; letter-spacing:-.02em}
+.stat .lb{color:var(--muted); font-size:13px; margin-top:8px}
+.up{color:var(--lime)} .down{color:var(--red)}
+
+/* table */
+.tbl{width:100%; border-collapse:collapse; font-size:13.5px; overflow:hidden; border-radius:14px; border:1px solid var(--line)}
+.tbl th,.tbl td{padding:11px 12px; text-align:left; border-bottom:1px solid var(--line)}
+.tbl th{background:var(--card2); font-family:'Space Grotesk'; font-weight:600; font-size:12px; color:var(--muted); letter-spacing:.03em}
+.tbl td{background:var(--card)}
+.tbl tr:last-child td{border-bottom:none}
+.tbl td:first-child{font-weight:500}
+.tbl .n{font-family:'Space Grotesk'; font-weight:600; text-align:right}
+
+/* bar chart (the ladder) */
+.bars{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; align-items:end; margin-top:18px}
+.barcol{text-align:center}
+.bartrack{height:200px; display:flex; align-items:flex-end; justify-content:center}
+.bar{width:64%; border-radius:12px 12px 4px 4px; height:0; transition:height 1s cubic-bezier(.2,.8,.2,1) .2s; position:relative; min-height:6px}
+.in .bar{height:var(--h)}
+.bar.b1{background:linear-gradient(180deg,#3a2226,#FF5C6B)}
+.bar.b2{background:linear-gradient(180deg,#3a3a2a,#FFC24B)}
+.bar.b3{background:linear-gradient(180deg,#2f3a1f,#C6FF3D)}
+.bar span{position:absolute; top:-26px; left:50%; transform:translateX(-50%); font-family:'Space Grotesk'; font-weight:700; font-size:15px; white-space:nowrap}
+.barcol .cap{margin-top:12px; font-size:12.5px; color:var(--muted); line-height:1.35}
+.barcol .cap b{display:block; font-family:'Space Grotesk'; font-size:14px; margin-bottom:2px}
+
+/* pill row */
+.pills{display:flex; flex-wrap:wrap; gap:8px; margin-top:6px}
+.pill{font-size:12.5px; padding:7px 12px; border-radius:999px; border:1px solid var(--line); background:var(--card); color:var(--muted); font-weight:500}
+.pill b{color:var(--lime)}
+
+/* content idea cards */
+.idea{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; position:relative; overflow:hidden}
+.idea::before{content:""; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--lime)}
+.idea.carr::before{background:var(--violet)}
+.idea .type{font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--lime)}
+.idea.carr .type{color:var(--violet)}
+.idea h3{font-size:15px; margin:6px 0 8px}
+.idea .why{font-size:12.5px; color:var(--muted); margin-bottom:10px}
+.idea .hook{font-size:13.5px; background:var(--bg2); border:1px dashed var(--line); border-radius:10px; padding:9px 11px; color:var(--txt); font-style:italic}
+.idea .hook::before{content:"HOOK  "; font-style:normal; font-family:'Space Grotesk'; font-size:10px; letter-spacing:.1em; color:var(--dim)}
+
+/* hero */
+.hero .badge{display:inline-flex; align-items:center; gap:8px; background:var(--card); border:1px solid var(--line); border-radius:999px; padding:7px 14px; font-size:13px; color:var(--muted); margin-bottom:22px}
+.hero .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--lime); box-shadow:0 0 12px var(--lime)}
+.hero h1{font-size:clamp(38px,11vw,76px); line-height:.98; letter-spacing:-.03em; font-weight:700}
+.hero h1 .at{color:var(--lime)}
+.hero .sub{color:var(--muted); font-size:clamp(16px,4.2vw,20px); margin-top:18px; max-width:560px}
+.hero .verdict{margin-top:26px; font-size:clamp(17px,4.4vw,21px); font-weight:500; line-height:1.4}
+.hero .verdict .k{color:var(--lime); font-weight:700}
+.metaline{display:flex; flex-wrap:wrap; gap:16px; margin-top:30px; color:var(--dim); font-size:13px}
+.metaline b{color:var(--muted)}
+.scrollhint{position:absolute; bottom:34px; left:50%; transform:translateX(-50%); color:var(--dim); font-size:12px; letter-spacing:.1em; text-align:center; z-index:2}
+.scrollhint .m{width:24px; height:38px; border:2px solid var(--line); border-radius:14px; margin:0 auto 8px; position:relative}
+.scrollhint .m::after{content:""; position:absolute; top:7px; left:50%; transform:translateX(-50%); width:4px; height:8px; background:var(--lime); border-radius:2px; animation:sc 1.5s infinite}
+@keyframes sc{0%{opacity:0; top:7px}40%{opacity:1}80%{opacity:0; top:18px}100%{opacity:0}}
+
+.note{font-size:12px; color:var(--dim); margin-top:18px; line-height:1.5; border-top:1px solid var(--line); padding-top:14px}
+.sectlabel{font-size:12px; color:var(--dim); font-family:'Space Grotesk'; letter-spacing:.05em; margin-bottom:10px}
+.win-list{list-style:none; display:flex; flex-direction:column; gap:10px; margin-top:6px}
+.win-list li{display:flex; gap:11px; align-items:flex-start; font-size:14px; color:var(--muted)}
+.win-list li .ic{color:var(--lime); font-weight:700; font-family:'Space Grotesk'; flex-shrink:0}
+.win-list li b{color:var(--txt)}
+.cta{display:inline-block; margin-top:8px; background:var(--lime); color:#0a0c05; font-family:'Space Grotesk'; font-weight:700; font-size:15px; padding:14px 22px; border-radius:14px; text-decoration:none}
+.mini{font-size:11px; color:var(--dim); text-transform:uppercase; letter-spacing:.08em; margin-bottom:4px}
+</style>
+</head>
+<body>
+<div class="topbar"><i id="prog"></i></div>
+<nav class="dots" id="dots"></nav>
+<div class="counter"><b id="cnum">01</b> / 14</div>
+
+<div class="deck" id="deck">
+
+<!-- 1 HERO -->
+<section id="s1" class="hero">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="badge rv"><span class="dot"></span> Relatório estratégico · dados reais · 19/mai a 04/jul 2026</div>
+    <h1 class="rv d1"><span class="at">@</span>cassioluanr</h1>
+    <div class="sub rv d2">Diagnóstico do perfil e plano de crescimento no Instagram, com Playbook de Viralização 2026.</div>
+    <div class="verdict rv d3">Seu conteúdo não é o problema. <span class="k">A consistência é.</span><br>Quando você posta, cresce. Quando some, sangra seguidor. Está no seu próprio dado.</div>
+    <div class="metaline rv d4">
+      <span><b>18.358</b> seguidores</span>
+      <span><b>26</b> reels + <b>4</b> posts analisados</span>
+      <span>Fonte: <b>Metricool</b></span>
+    </div>
+  </div>
+  <div class="scrollhint rv d5"><div class="m"></div>DESLIZE</div>
+</section>
+
+<!-- 2 RESUMO / BIG NUMBERS -->
+<section id="s2">
+  <div class="wrap">
+    <div class="kicker rv">Resumo executivo</div>
+    <h2 class="rv d1">Três números que contam a história</h2>
+    <p class="lead rv d2">Um mostra o buraco, um mostra a reação, um mostra o motor. Todos medidos, nenhum chutado.</p>
+    <div class="stats">
+      <div class="stat rv d2">
+        <div class="num up" data-target="142" data-suffix="%" data-prefix="+">+0%</div>
+        <div class="lb">Alcance nesta semana vs a anterior. Você voltou a postar e o alcance <b>mais que dobrou</b>.</div>
+      </div>
+      <div class="stat rv d3">
+        <div class="num down" data-target="73" data-suffix="%" data-prefix="-">-0%</div>
+        <div class="lb">Queda das views de Reel de maio (29.188) para junho (7.745). Efeito de parar de postar.</div>
+      </div>
+      <div class="stat rv d4">
+        <div class="num" data-target="15" data-prefix="-" data-suffix="" style="color:var(--red)">-0</div>
+        <div class="lb">Seguidores perdidos na semana em que você postou <b>zero</b> (14 a 20/jun).</div>
+      </div>
+    </div>
+    <p class="note rv d5">Método: histórico do Metricool começa em 19/mai, então junho é o mês fechado de referência. Onde comparo períodos de tamanhos diferentes, uso média por dia.</p>
+  </div>
+</section>
+
+<!-- 3 O QUE FUNCIONA -->
+<section id="s3">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="kicker rv" style="color:var(--lime)">O que está funcionando</div>
+    <h2 class="rv d1">Você já tem as peças certas</h2>
+    <div class="grid g3" style="margin-top:8px">
+      <div class="card win rv d2"><span class="emoji">🎯</span><h3>Reels curtos de tese única</h3><p>Seu melhor conteúdo do período, o reel <b>"Compensa."</b>, fez 7.149 views, 33 compartilhamentos e 62% de retenção. Curto, direto, verdade universal.</p></div>
+      <div class="card win rv d3"><span class="emoji">🤝</span><h3>Conteúdo de identidade</h3><p>Os reels <b>"pessoas que crescem seguem"</b> lideram compartilhamento e salvamento. Viram distintivo social: a pessoa reposta pra se afirmar.</p></div>
+      <div class="card win rv d4"><span class="emoji">⚡</span><h3>O motor responde na hora</h3><p>Nesta semana você postou 4 vezes e o alcance saltou <b>+142%</b>. O algoritmo está pronto, só faltava você ligar.</p></div>
+    </div>
+    <div class="pills rv d5" style="margin-top:16px">
+      <span class="pill">Retenção média nos bons reels <b>53%</b></span>
+      <span class="pill">Engajamento por alcance <b>6 a 9%</b></span>
+      <span class="pill">Compartilhamento é sua força <b>já hoje</b></span>
+    </div>
+  </div>
+</section>
+
+<!-- 4 O QUE PIORA -->
+<section id="s4">
+  <div class="wrap">
+    <div class="kicker rv" style="color:var(--red)">O que está piorando</div>
+    <h2 class="rv d1">E os três furos que te seguram</h2>
+    <div class="grid g3" style="margin-top:8px">
+      <div class="card bad rv d2"><span class="emoji">📉</span><h3>Junho foi mês de perda</h3><p>Saldo de seguidores <b>negativo</b> no mês. O pior momento: 14 a 20/jun, zero posts e <b>-15 seguidores</b> só naquela semana.</p></div>
+      <div class="card bad rv d3"><span class="emoji">🎬</span><h3>Views de Reel caíram 73%</h3><p>De 22 reels em maio para 4 em junho. O formato que te distribui esfriou porque parou de ser alimentado.</p></div>
+      <div class="card bad rv d4"><span class="emoji">💬</span><h3>Zero conversa, zero stories</h3><p>Comentários entre 0 e 6 por post. E <b>0 stories</b> no período inteiro. Falta o sinal de comunidade que o algoritmo mais valoriza.</p></div>
+    </div>
+    <p class="note rv d5">Traduzindo: alcance oscila e volta. Seguidor perdido e silêncio no perfil são estruturais. É o que o plano ataca.</p>
+  </div>
+</section>
+
+<!-- 5 MES JUNHO x MAIO -->
+<section id="s5">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="kicker rv">Desempenho do mês</div>
+    <h2 class="rv d1">Junho x Maio, por dia</h2>
+    <p class="lead rv d2">Maio foi lançamento (23 posts em 12 dias). Junho foi a ressaca (6 posts em 30 dias). Comparo por média diária pra ser justo.</p>
+    <table class="tbl rv d3">
+      <tr><th>Métrica</th><th class="n">Maio</th><th class="n">Junho</th><th class="n">Variação</th></tr>
+      <tr><td>Publicações por dia</td><td class="n">1,77</td><td class="n">0,20</td><td class="n down">-89%</td></tr>
+      <tr><td>Views (impressões) por dia</td><td class="n">6.611</td><td class="n">2.972</td><td class="n down">-55%</td></tr>
+      <tr><td>Alcance da conta por dia</td><td class="n">1.583</td><td class="n">545</td><td class="n down">-66%</td></tr>
+      <tr><td>Views de vídeo (Reels)</td><td class="n">29.188</td><td class="n">7.745</td><td class="n down">-73%</td></tr>
+      <tr><td>Saldo de seguidores</td><td class="n up">+45</td><td class="n down">-8</td><td class="n down">reversão</td></tr>
+    </table>
+    <p class="note rv d4">O ponto que mais importa não é vaidade. É o <b>saldo de seguidores virando negativo</b>. O Instagram aposentou "impressões" e unificou tudo em Views, por isso uso Views como o indicador de impressões.</p>
+  </div>
+</section>
+
+<!-- 6 A ESCADA -->
+<section id="s6">
+  <div class="wrap">
+    <div class="kicker rv" style="color:var(--amber)">A prova em um gráfico</div>
+    <h2 class="rv d1">A escada da consistência</h2>
+    <p class="lead rv d2">Três semanas seguidas, mesmo perfil, só muda quantas vezes você postou. Olha o que acontece com o crescimento.</p>
+    <div class="bars rv d3">
+      <div class="barcol">
+        <div class="bartrack"><div class="bar b1" style="--h:22%"><span class="down">-15</span></div></div>
+        <div class="cap"><b>0 posts</b>14 a 20/jun<br>Sangra seguidor</div>
+      </div>
+      <div class="barcol">
+        <div class="bartrack"><div class="bar b2" style="--h:42%"><span class="hla">+2</span></div></div>
+        <div class="cap"><b>2 posts</b>21 a 27/jun<br>Estabiliza</div>
+      </div>
+      <div class="barcol">
+        <div class="bartrack"><div class="bar b3" style="--h:100%"><span class="up">+4</span></div></div>
+        <div class="cap"><b>4 posts</b>28/jun a 4/jul<br>Cresce e alcance 2,4x</div>
+      </div>
+    </div>
+    <p class="note rv d4">Barra = saldo de seguidores da semana. A relação é direta: postar 0 sangra, 2 segura, 4 cresce. Essa é a alavanca número um do seu perfil, e é de graça.</p>
+  </div>
+</section>
+
+<!-- 7 SEMANA x SEMANA -->
+<section id="s7">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="kicker rv">Esta semana x anterior</div>
+    <h2 class="rv d1">Tudo reagiu, e forte</h2>
+    <table class="tbl rv d2">
+      <tr><th>Métrica</th><th class="n">Semana ant.</th><th class="n">Esta semana</th><th class="n">Var.</th></tr>
+      <tr><td>Publicações</td><td class="n">2</td><td class="n">4</td><td class="n up">+100%</td></tr>
+      <tr><td>Alcance da conta</td><td class="n">3.429</td><td class="n">8.303</td><td class="n up">+142%</td></tr>
+      <tr><td>Views de vídeo</td><td class="n">1.281</td><td class="n">4.971</td><td class="n up">+288%</td></tr>
+      <tr><td>Interações</td><td class="n">65</td><td class="n">345</td><td class="n up">+431%</td></tr>
+      <tr><td>Contas engajadas</td><td class="n">224</td><td class="n">500</td><td class="n up">+123%</td></tr>
+      <tr><td>Salvamentos</td><td class="n">3</td><td class="n">0</td><td class="n down">-100%</td></tr>
+    </table>
+    <p class="note rv d3">Atenção nas duas últimas linhas: alcance subiu por <b>volume</b>, mas o conteúdo desta semana gerou menos "guardar e enviar" do que os campeões de maio. Recuperou distribuição, ainda não recuperou o viral. É o que as ideias resolvem.</p>
+  </div>
+</section>
+
+<!-- 8 TOP CONTEUDOS -->
+<section id="s8">
+  <div class="wrap">
+    <div class="kicker rv" style="color:var(--lime)">Melhores conteúdos</div>
+    <h2 class="rv d1">O padrão dos vencedores</h2>
+    <p class="lead rv d2">Reel curto + tese única + primeira frase que prende + retenção acima de 50%. Nenhum campeão depende de legenda longa.</p>
+    <table class="tbl rv d3">
+      <tr><th>Reel</th><th class="n">Views</th><th class="n">Compart.</th><th class="n">Retenção</th></tr>
+      <tr><td>"Compensa."</td><td class="n">7.149</td><td class="n">33</td><td class="n">62%</td></tr>
+      <tr><td>"Pessoas que crescem seguem"</td><td class="n">3.581</td><td class="n">18</td><td class="n">57%</td></tr>
+      <tr><td>"Pessoas que querem crescer..."</td><td class="n">3.538</td><td class="n">27</td><td class="n">37%</td></tr>
+      <tr><td>"@cassioluanr" (bastidor)</td><td class="n">2.985</td><td class="n">12</td><td class="n">58%</td></tr>
+    </table>
+    <div class="pills rv d4" style="margin-top:16px">
+      <span class="pill">Tema 1: <b>disciplina / "vale a pena"</b></span>
+      <span class="pill">Tema 2: <b>identidade / pertencimento</b></span>
+      <span class="pill">Bônus feed: <b>"marca um amigo"</b> gerou 3 sends de 1 foto</span>
+    </div>
+  </div>
+</section>
+
+<!-- 9 PIORES -->
+<section id="s9">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="kicker rv" style="color:var(--red)">Piores conteúdos</div>
+    <h2 class="rv d1">Não é o tema. É o formato.</h2>
+    <div class="grid g2" style="margin-top:8px">
+      <div class="card bad rv d2"><span class="tag hlr">Legendão de negócio</span><h3>Reels "memoir" empresarial</h3><p>Os textões sobre agência e bastidor de gestão: 120, 654 e 223 views, retenção de 33 a 49%. O público veio pela dose rápida, não pela crônica. <b>Correção:</b> vira reel visual de 15s ou carrossel, nunca parede de texto.</p></div>
+      <div class="card bad rv d3"><span class="tag hlr">Rajada</span><h3>Clones postados em minutos</h3><p>Vários reels quase idênticos no mesmo dia, com 100 a 160 views e até 21% de retenção. Postar repetido em sequência canibaliza o próprio alcance. <b>Correção:</b> um bom conteúdo, uma vez, no horário de pico.</p></div>
+    </div>
+    <p class="note rv d4">Lição central: o tema de bastidor e identidade FUNCIONA. O que mata é a entrega (texto longo em vídeo) e a repetição. Mesma matéria-prima, embalagem certa.</p>
+  </div>
+</section>
+
+<!-- 10 PADROES -->
+<section id="s10">
+  <div class="wrap">
+    <div class="kicker rv">Padrões do perfil</div>
+    <h2 class="rv d1">O que gera cada coisa</h2>
+    <div class="grid g2">
+      <div class="card rv d2"><span class="tag hl">Alcance</span><p>Temas de <b>disciplina</b> e <b>identidade</b>. São os que furam a bolha dos seguidores atuais.</p></div>
+      <div class="card rv d2"><span class="tag hl">Compartilhamento</span><p>Frase-tese universal ("Compensa.") e distintivo de grupo. É o que a pessoa manda no direct.</p></div>
+      <div class="card rv d3"><span class="tag hl">Salvamento</span><p>Os mesmos campeões. Conteúdo que a pessoa quer reencontrar depois.</p></div>
+      <div class="card rv d3"><span class="tag hlr">Comentários</span><p>Ponto cego. Teto de 12 num período inteiro. Nenhum tema gera conversa hoje.</p></div>
+    </div>
+    <div class="grid g2" style="margin-top:12px">
+      <div class="card rv d4"><span class="tag hl">Formato que cresce</span><p><b>Reel</b> para descoberta. É onde estão quase todas as views que furam a base.</p></div>
+      <div class="card rv d4"><span class="tag hla">Formato de nutrição</span><p><b>Carrossel</b>: 2.000 a 2.500 views, mas alcance de 700 a 800. Visto por quem já te segue. Bom pra nutrir, fraco pra crescer.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 VIRALIZACAO 2026 -->
+<section id="s11">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="kicker rv" style="color:var(--violet)">Playbook de viralização 2026</div>
+    <h2 class="rv d1">O que está funcionando na internet agora</h2>
+    <p class="lead rv d2">O jogo do Instagram mudou. Calibrei cada alavanca pro seu perfil, que já é forte em compartilhamento.</p>
+    <div class="grid g2">
+      <div class="card v rv d2"><span class="emoji">📤</span><h3>Sends viraram o rei</h3><p>O Instagram rankeia por <b>compartilhamento no direct</b> acima de like. Seu "Compensa." viralizou por 33 sends. Faça conteúdo pra ser <b>mandado</b>, não só curtido.</p></div>
+      <div class="card v rv d2"><span class="emoji">🧪</span><h3>Trial Reels (reels de teste)</h3><p>Recurso que entrega o reel primeiro pra quem <b>não</b> te segue. Testa hook sem "sujar" o feed. Rode 2 ou 3 por semana e promova só os que estouram.</p></div>
+      <div class="card v rv d3"><span class="emoji">💬</span><h3>Gatilho "comenta X"</h3><p>"Comenta CRESCER que eu te mando o roteiro." Dispara comentários e DMs de uma vez (automação tipo ManyChat). Ataca sua métrica mais fraca e gera sends.</p></div>
+      <div class="card v rv d3"><span class="emoji">🔁</span><h3>Loop perfeito + 3s de texto</h3><p>Hook escrito na tela no primeiro frame, e o fim que emenda no começo. Vídeo curto que dá loop é reassistido, e replay é ouro pro alcance.</p></div>
+      <div class="card v rv d4"><span class="emoji">🗂️</span><h3>Carrossel voltou com força</h3><p>O IG reconta impressão a cada slide. Capa com "print isso", 6 a 10 slides salváveis. Formato campeão de salvamento em 2026.</p></div>
+      <div class="card v rv d4"><span class="emoji">📺</span><h3>Séries episódicas</h3><p>"Parte 1, 2, 3..." treina o algoritmo a te trazer o público de volta. Retorno recorrente é o sinal que mais destrava alcance hoje.</p></div>
+      <div class="card v rv d5"><span class="emoji">🤝</span><h3>Colabs (post em coautoria)</h3><p>Aparece nos dois públicos ao mesmo tempo. Uma colab com criador do mesmo nicho dobra seu alcance de graça.</p></div>
+      <div class="card v rv d5"><span class="emoji">⚡</span><h3>Responder em 30 min</h3><p>Responda todo comentário na primeira meia hora e fixe o melhor. Sinal forte de comunidade, e puxa a thread pra cima.</p></div>
+    </div>
+    <p class="note rv d6">Fio condutor: você já ganha em <b>sends e saves</b>. Some a isso constância, gatilho de comentário e stories diários, e o perfil vira máquina.</p>
+  </div>
+</section>
+
+<!-- 12 RECOMENDACOES -->
+<section id="s12">
+  <div class="wrap">
+    <div class="kicker rv">Recomendações</div>
+    <h2 class="rv d1">Mais, menos, testar</h2>
+    <div class="grid g3">
+      <div class="card win rv d2">
+        <span class="tag hl">Faça mais</span>
+        <ul class="win-list">
+          <li><span class="ic">+</span><span><b>4 a 5 Reels por semana</b>, cadência fixa. Alavanca provada.</span></li>
+          <li><span class="ic">+</span><span>Reels de <b>tese única</b> estilo "Compensa.".</span></li>
+          <li><span class="ic">+</span><span>Conteúdo de <b>identidade</b> (quem cresce faz X).</span></li>
+          <li><span class="ic">+</span><span>Postar nos <b>picos</b>: ter a sex, 10h e 17h.</span></li>
+        </ul>
+      </div>
+      <div class="card bad rv d3">
+        <span class="tag hlr">Faça menos</span>
+        <ul class="win-list">
+          <li><span class="ic" style="color:var(--red)">–</span><span><b>Legenda longa</b> em Reel. Vira reel visual ou carrossel.</span></li>
+          <li><span class="ic" style="color:var(--red)">–</span><span><b>Rajada</b> de reels iguais no mesmo dia.</span></li>
+          <li><span class="ic" style="color:var(--red)">–</span><span>Depender de <b>carrossel</b> pra crescer. Ele nutre, não descobre.</span></li>
+        </ul>
+      </div>
+      <div class="card v rv d4">
+        <span class="tag hlv">Teste</span>
+        <ul class="win-list">
+          <li><span class="ic" style="color:var(--violet)">›</span><span><b>Gatilho de comentário</b> + comentário fixado.</span></li>
+          <li><span class="ic" style="color:var(--violet)">›</span><span><b>Stories diários</b> (3 a 5): enquete, bastidor.</span></li>
+          <li><span class="ic" style="color:var(--violet)">›</span><span><b>A/B de hook</b>: mesmo tema, 2 aberturas.</span></li>
+          <li><span class="ic" style="color:var(--violet)">›</span><span><b>Trial Reels</b> pra achar o próximo "Compensa.".</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 13 IDEIAS -->
+<section id="s13">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="kicker rv" style="color:var(--lime)">Ideias fundamentadas nos seus dados</div>
+    <h2 class="rv d1">3 Reels + 3 carrosséis</h2>
+    <div class="grid g2">
+      <div class="idea rv d2"><span class="type">Reel 01</span><h3>"Compensa. Parte 2"</h3><div class="why">Seu formato campeão (7.149 views, 62% retenção, 33 sends). Tese única de disciplina.</div><div class="hook">Ninguém aplaude o dia 400. Mas é ele que muda tudo.</div></div>
+      <div class="idea rv d2"><span class="type">Reel 02</span><h3>3 coisas que separam quem cresce</h3><div class="why">Identidade lidera sends (27) e saves (14). Save-bait puro.</div><div class="hook">Se você já faz a número 2, está na frente de 90%.</div></div>
+      <div class="idea rv d3"><span class="type">Reel 03</span><h3>"O bastidor que ninguém posta"</h3><div class="why">Bastidor funciona, mas em vídeo curto e visual. Corrige o textão que fracassou.</div><div class="hook">Isso é o que aconteceu antes daquele post de vitória.</div></div>
+      <div class="idea carr rv d4"><span class="type">Carrossel 01</span><h3>5 verdades que levei anos pra entender</h3><div class="why">Carrossel prende a base e identidade é seu campeão de salvamento.</div><div class="hook">Print isso e volta aqui daqui a 90 dias.</div></div>
+      <div class="idea carr rv d4"><span class="type">Carrossel 02</span><h3>"Marca quem precisa ver isso"</h3><div class="why">A imagem com esse gatilho já gerou 3 sends. Em carrossel, estende o tempo de tela.</div><div class="hook">Tem alguém que precisa ler isso hoje. Marca no último slide.</div></div>
+      <div class="idea carr rv d5"><span class="type">Carrossel 03</span><h3>Bastidores da semana (série fixa)</h3><div class="why">Já performou (2.019 views). Vira ritual semanal e ataca a inconsistência.</div><div class="hook">Semana X de construir algo que a maioria desiste no meio.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 14 CTA -->
+<section id="s14">
+  <div class="glow"></div>
+  <div class="wrap" style="text-align:center">
+    <div class="mini rv">Próximo passo</div>
+    <h2 class="rv d1" style="font-size:clamp(28px,7vw,46px)">O plano cabe numa frase:<br><span class="hl">poste, converse, apareça nos stories.</span></h2>
+    <p class="lead rv d2" style="margin:18px auto 26px">Você já provou que o conteúdo funciona. Falta transformar isso em calendário. Bora montar 2 semanas de posts com dia, horário e formato prontos pra publicar.</p>
+    <div class="rv d3"><a class="cta" href="https://www.instagram.com/cassioluanr/" target="_blank" rel="noopener">Ver o perfil @cassioluanr</a></div>
+    <p class="note rv d4" style="max-width:620px; margin-left:auto; margin-right:auto; text-align:center">Todos os números são medidos no Metricool (conta @cassioluanr, fuso de São Paulo). Leituras minhas ("motivo provável") vêm marcadas no relatório completo. Dado post a post via Windsor foi contornado pelo Metricool. Relatório gerado em 04/jul/2026.</p>
+  </div>
+</section>
+
+</div>
+
+<script>
+const deck=document.getElementById('deck');
+const secs=[...document.querySelectorAll('section')];
+const prog=document.getElementById('prog');
+const cnum=document.getElementById('cnum');
+const dotsWrap=document.getElementById('dots');
+secs.forEach((s,i)=>{const a=document.createElement('a');a.href='#'+s.id;dotsWrap.appendChild(a);});
+const dots=[...dotsWrap.children];
+
+// reveal + counters via IntersectionObserver
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      const idx=secs.indexOf(e.target);
+      cnum.textContent=String(idx+1).padStart(2,'0');
+      dots.forEach((d,i)=>d.classList.toggle('on',i===idx));
+      e.target.querySelectorAll('.num[data-target]').forEach(runCount);
+    }
+  });
+},{threshold:.55});
+secs.forEach(s=>io.observe(s));
+
+function runCount(el){
+  if(el.dataset.done)return; el.dataset.done=1;
+  const target=+el.dataset.target, pre=el.dataset.prefix||'', suf=el.dataset.suffix||'';
+  const dur=1100, t0=performance.now();
+  function tick(now){
+    const p=Math.min(1,(now-t0)/dur);
+    const ease=1-Math.pow(1-p,3);
+    el.textContent=pre+Math.round(target*ease)+suf;
+    if(p<1)requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+// progress bar
+deck.addEventListener('scroll',()=>{
+  const max=deck.scrollHeight-deck.clientHeight;
+  prog.style.width=(100*deck.scrollTop/max)+'%';
+},{passive:true});
+
+// dot click
+dots.forEach((d,i)=>d.addEventListener('click',ev=>{ev.preventDefault();secs[i].scrollIntoView({behavior:'smooth'});}));
+
+// keyboard nav
+let cur=0;
+window.addEventListener('keydown',e=>{
+  if(e.key==='ArrowDown'||e.key==='PageDown'){e.preventDefault();cur=Math.min(secs.length-1,cur+1);secs[cur].scrollIntoView({behavior:'smooth'});}
+  if(e.key==='ArrowUp'||e.key==='PageUp'){e.preventDefault();cur=Math.max(0,cur-1);secs[cur].scrollIntoView({behavior:'smooth'});}
+});
+deck.addEventListener('scroll',()=>{
+  cur=Math.round(deck.scrollTop/deck.clientHeight);
+},{passive:true});
+</script>
+</body>
+</html>
